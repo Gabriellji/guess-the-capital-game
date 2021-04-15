@@ -40,7 +40,7 @@ const ApiProvider = ({ children }) => {
             ...state,
             isCountryLoaded: false,
         });
-        const randomIndexes = getArrayOfRandomNumbers();
+        const randomIndexes = getArrayOfRandomNumbers(state.data.length);
         const result = randomIndexes.map((elem, idx) => {
             return state.data[elem];
         });

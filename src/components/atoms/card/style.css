@@ -1,0 +1,38 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap'); */
+
+.btn{
+
+    background-color: lightgrey;
+    height: 50px;
+    width: 200px;
+    border-style: solid;
+    border-width: 4px;
+    border-left-color: white;
+    border-top-color: white;
+    border-bottom-color: dimgrey;
+    border-right-color: dimgrey;
+    box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.75);
+}
+.in_btn{
+    padding: 20px;
+    text-align:center;
+    /* font-family: 'Press Start 2P', cursive; */
+    user-select: none;
+}
+.btn:hover{
+    background-color: #ff89eb;
+    color: white;
+    cursor: pointer;
+}
+.btn:active{
+    background-color: darkgrey;
+    color: black;
+    border-left-color: dimgrey;
+    border-top-color: dimgrey;
+    border-bottom-color: white;
+    border-right-color: white;
+    -webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
+}
+

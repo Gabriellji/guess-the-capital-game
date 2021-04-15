@@ -2,12 +2,26 @@ import * as React from 'react';
 import { ApiContext } from '../../../context/ApiProvider';
 import Card from '../../atoms/card/Card';
 
+const addScore = (score) => score + 20;
+
 const CardList = () => {
     const { state, setState, getRandomCountries } = React.useContext(ApiContext);
+    const [score, setScore] = React.useState(0);
+
+    const clickHandler = (e) => {
+        const id = e.target.id;
+        if (id === state.countries[0].name.split(',')[0]) {
+            const newScore = addScore(score);
+            setScore(newScore);
+            getRandomCountries();
+        } else {
+            getRandomCountries();
+        }
+    }
 
     React.useEffect(() => {
         if (state.isLoaded) {
-            getRandomCountries();
+            getRandomCountries()
         }
     }, [state.isLoaded]);
 
@@ -15,8 +29,14 @@ const CardList = () => {
         <div>
             <h1>{state.countries[0].name.split(',')[0]}</h1>
             {
-                state.countries.map(country => <Card key={country.capital} id={country.name} capital={country.capital} />)
+                state.countries.map(country =>
+                    <Card key={country.capital}
+                        id={country.name.split(',')[0]}
+                        onClick={clickHandler}
+                        capital={country.capital}
+                    />)
             }
+            <h2>{score}</h2>
         </div>
     )
 }

@@ -1,6 +1,8 @@
-const Card = ({capital}) => (
-    <div>
-        <h3>{capital}</h3>
+import './style.css';
+
+const Card = ({ capital, onClick, id }) => (
+    <div className="btn" onClick={(e) => onClick(e)}>
+        <div className="in_btn" id={id} >{capital}</div>
     </div>
 )
 
