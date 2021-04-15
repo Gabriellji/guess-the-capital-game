@@ -1,7 +1,8 @@
 export const initialState = {
     data: [],
-    counties: [],
+    countries: new Array(4),
     rightAnswer: {},
     isLoaded: false,
-    score: ''
+    isCountryLoaded: false,
+    score: 0
 }
